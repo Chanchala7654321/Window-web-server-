@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Applications</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+
+<body>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div id="down">
+            <button class="btn" onclick="createCalculator()">📟 Calculator</button>
+            <button class="btn" onclick="createClock()">⏰ <br>Clock</button>
+            <button class="btn" onclick="createNotepad()">📝 <br> Notepad</button>
+        </div>
+    </section>
+
+
+    <!-- Calculator Section -->
+    <section id="calculator" style="display: none;">
+
+        <div class="calculatorpage">
+            <input type="text" placeholder="0" id="inputbox" readonly>
+            <div class="buttons">
+                <button class="operator" onclick="clearInput()">AC</button>
+                <button class="operator" onclick="deleteLast()">DEL</button>
+                <button class="operator" onclick="append('%')">%</button>
+                <button class="operator" onclick="append('/')">/</button>
+
+                <button onclick="append('7')">7</button>
+                <button onclick="append('8')">8</button>
+                <button onclick="append('9')">9</button>
+                <button class="operator" onclick="append('*')">*</button>
+
+                <button onclick="append('4')">4</button>
+                <button onclick="append('5')">5</button>
+                <button onclick="append('6')">6</button>
+                <button class="operator" onclick="append('-')">-</button>
+
+                <button onclick="append('1')">1</button>
+                <button onclick="append('2')">2</button>
+                <button onclick="append('3')">3</button>
+                <button class="operator" onclick="append('+')">+</button>
+
+                <button onclick="append('00')">00</button>
+                <button onclick="append('0')">0</button>
+                <button onclick="append('.')">.</button>
+                <button class="equalBtn" onclick="calculate()">=</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Clock Section -->
+    <section id="clock" style="display: none;">
+        <div id="Divclock">
+            <div id="hour">00:</div>
+            <div id="munite">00:</div>
+            <div id="second">00</div>
+            <div id="ampm">AM</div>
+        </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section id="notes" style="display: none;">
+        <div id="mainDiv">
+            <header>
+                <div id="Logo">
+                    <h1>Notes <span id="app">App</span></h1>
+                    <p>Your Notes</p>
+                </div>
+                <div id="searchDiv">
+                    <input type="text" id="search" placeholder="Search notes...">
+                </div>
+            </header>
+
+            <div id="menu">
+                <span class="menuitem">All</span>
+                <span class="menuitem">Work</span>
+                <span class="menuitem">Personal</span>
+                <span class="menuitem">Ideas</span>
+                <span class="menuitem">Reminders</span>
+            </div>
+
+            <div id="not"></div>
+        </div>
+
+        <button id="btnForEditor" onclick="newaddTask()">Save Note</button>
+
+       
+            <!-- Note Editor -->
+
+            <div id="newTaskBtn">
+                <div>
+                    <h2>New Note</h2>
+                    <input type="text" placeholder="Note tittle"> <br>
+                    <textarea name="" id="notWrite" placeholder="Write your note here..."></textarea>
+
+                    <div>
+                        <span>Tag:</span>
+                        <select name="" id="optionchaanje">
+                            <option value="Work">Work</option>
+                            <option value="personal">personal</option>
+                            <option value="Ideas">Ideas</option>
+                            <option value="Reminders">Reminders</option>
+                        </select>
+                    </div>
+                    <div id="addbtn">
+                        <button onclick="cutdiv()" id="cut"> Cancel </button>
+                        <button id="save" onclick="saveNote()"> Save </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="1.js"></script>
+
+</body>
+
+</html>
